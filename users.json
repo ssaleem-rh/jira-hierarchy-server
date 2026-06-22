@@ -1,0 +1,180 @@
+{
+  "users": [
+    {
+      "name": "Chris Kodama",
+      "display_name": "Chris",
+      "jira_search_name": "Chris Kodama",
+      "jira_account_id": "712020:193d6524-3b56-4722-bc00-771dd83928cf",
+      "github_username": null
+    },
+    {
+      "name": "Christina Xu",
+      "display_name": "Christina",
+      "jira_search_name": "Christina Xu",
+      "jira_account_id": "629f49a5451c00006965394c",
+      "github_username": "christinaexyou"
+    },
+    {
+      "name": "Diego Maniloff",
+      "display_name": "Diego",
+      "jira_search_name": "Diego Maniloff",
+      "jira_account_id": "712020:3000ee1a-510a-4f3d-bebf-6e58133e841d",
+      "github_username": null
+    },
+    {
+      "name": "Emilien Macchi",
+      "display_name": "Emilien",
+      "jira_search_name": "Emilien Macchi",
+      "jira_account_id": "712020:9b576bd5-a4e5-4820-9ab7-330e04045afd",
+      "github_username": null
+    },
+    {
+      "name": "Evgenia Martyniuk",
+      "display_name": "Evgenia",
+      "jira_search_name": "Evgenia Martyniuk",
+      "jira_account_id": "712020:3d2c94e4-351e-406c-bcdb-86f7717a833b",
+      "github_username": null
+    },
+    {
+      "name": "Gin Biak Naulak",
+      "display_name": "Gin",
+      "jira_search_name": "Gin Biak Naulak",
+      "jira_account_id": "712020:8f9466e8-fad6-4aab-82c0-d7841b6529af",
+      "github_username": null
+    },
+    {
+      "name": "Henrique Nunes",
+      "display_name": "Henrique",
+      "jira_search_name": "Henrique Nunes",
+      "jira_account_id": "712020:2edbcb2a-ead3-477e-ae43-851d1923a41e",
+      "github_username": null
+    },
+    {
+      "name": "Karishma Punwatkar",
+      "display_name": "Karishma",
+      "jira_search_name": "Karishma Punwatkar",
+      "jira_account_id": "712020:981d7ce4-cdeb-45c0-b9e9-23e32427de45",
+      "github_username": "kpunwatk"
+    },
+    {
+      "name": "Luca Burgazzoli",
+      "display_name": "Luca",
+      "jira_search_name": "Luca Burgazzoli",
+      "jira_account_id": "5b335d1d2975df4c55ea6f83",
+      "github_username": "tarilabs"
+    },
+    {
+      "name": "Mac Misiura",
+      "display_name": "Mac",
+      "jira_search_name": "Mac Misiura",
+      "jira_account_id": "712020:acf2fa28-2ea6-4914-bc4b-eccbb9fd008d",
+      "github_username": "m-misiura"
+    },
+    {
+      "name": "Marian Macik",
+      "display_name": "Marian",
+      "jira_search_name": "Marian Macik",
+      "jira_account_id": "557058:501ca6d5-85be-425d-a151-f0076c0ccd70",
+      "github_username": null
+    },
+    {
+      "name": "Narayan Sagar B S",
+      "display_name": "Narayan",
+      "jira_search_name": "Narayan Sagar B S",
+      "jira_account_id": "712020:e4eccd48-03ae-40f3-b98d-059e5c49af44",
+      "github_username": null
+    },
+    {
+      "name": "Prabhu Padashetty",
+      "display_name": "Prabhu",
+      "jira_search_name": "Prabhu Padashetty",
+      "jira_account_id": "712020:6558af4f-f52e-4eb8-b552-8e0c5027ba10",
+      "github_username": null
+    },
+    {
+      "name": "Rob Geada",
+      "display_name": "Rob",
+      "jira_search_name": "Rob Geada",
+      "jira_account_id": "5e258328a7b9540e76f44821",
+      "github_username": "RobGeada"
+    },
+    {
+      "name": "Rui Vieira",
+      "display_name": "Rui",
+      "jira_search_name": "Rui Vieira",
+      "jira_account_id": "70121:5a9a760a-598b-49c2-af0e-60c52f76c598",
+      "github_username": "ruivieira"
+    },
+    {
+      "name": "Sai Chandra Pandraju",
+      "display_name": "Sai",
+      "jira_search_name": "Sai Chandra Pandraju",
+      "jira_account_id": "712020:ea46af79-dc65-4b56-9a92-fad3f95f82c0",
+      "github_username": "saichandrapandraju"
+    },
+    {
+      "name": "Shehan Saleem",
+      "display_name": "Shehan",
+      "jira_search_name": "Shehan Saleem",
+      "jira_account_id": "712020:6ede6d7b-54fb-4c20-b034-04cc57041fcf",
+      "github_username": "ssaleem-rh"
+    },
+    {
+      "name": "Shelton Cyril",
+      "display_name": "Shelton",
+      "jira_search_name": "Shelton Cyril",
+      "jira_account_id": "712020:303eef54-00f5-4d8a-ad8c-55c47ae7fa30",
+      "github_username": "sheltoncyril"
+    },
+    {
+      "name": "Sobha Cheruku",
+      "display_name": "Sobha",
+      "jira_search_name": "Sobha Cheruku",
+      "jira_account_id": "712020:9c402cdf-b38a-4abd-bf13-b2189dd5dcb1",
+      "github_username": null
+    },
+    {
+      "name": "Srikar Tondapu",
+      "display_name": "Srikar",
+      "jira_search_name": "Srikar Tondapu",
+      "jira_account_id": "712020:e40fe191-82a2-4840-86ff-a0a4d3820dad",
+      "github_username": null
+    },
+    {
+      "name": "Sudip Sinha",
+      "display_name": "Sudip",
+      "jira_search_name": "Sudip Sinha",
+      "jira_account_id": "712020:a9838a63-ccd6-4b6f-8710-12a95a3304f4",
+      "github_username": "SudipSinha"
+    },
+    {
+      "name": "Sweta Anandpara",
+      "display_name": "Sweta",
+      "jira_search_name": "Sweta Anandpara",
+      "jira_account_id": "70121:20c8bae7-cd2e-44cb-8233-22b0b021fc89",
+      "github_username": null
+    },
+    {
+      "name": "Ugo Giordano",
+      "display_name": "Ugo",
+      "jira_search_name": "Ugo Giordano",
+      "jira_account_id": "618d2948cc2d7c0071887ab5",
+      "github_username": null
+    },
+    {
+      "name": "Tareq Alayan",
+      "display_name": "Tareq",
+      "jira_search_name": "Tareq Alayan",
+      "jira_account_id": "5b4df3264649a35be6efab12",
+      "github_username": "tareqalayan"
+    },
+    {
+      "name": "Zahra Jalia",
+      "display_name": "Zahra",
+      "jira_search_name": "Zahra Jalia",
+      "jira_account_id": "712020:e133b558-fab0-4d0d-a29d-20cd02e99568",
+      "github_username": null
+    }
+  ],
+  "jira_projects": ["RHOAIENG"]
+}
