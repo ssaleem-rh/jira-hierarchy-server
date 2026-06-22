@@ -1,7 +1,7 @@
 import { DashboardTemplate } from "@/components/templates/DashboardTemplate";
 import { UserMetricsPanel } from "@/components/organisms/UserMetricsPanel";
 
-export default async function UserPage(props: PageProps<"/users/[username]">) {
+export default async function UserPage(props: { params: Promise<{ username: string }> }) {
   const { username } = await props.params;
   const decoded = decodeURIComponent(username);
 
