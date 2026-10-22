@@ -1,7 +1,7 @@
 import type { NextRequest } from 'next/server';
 import { getLeaderboard } from '@/lib/leaderboard';
 
-const VALID_PERIODS = new Set(['30d', '3m', '6m', '12m']);
+const VALID_PERIODS = new Set(['7d', '30d', '3m', '6m', '12m']);
 
 export async function GET(req: NextRequest, ctx: { params: Promise<{ username: string }> }) {
   const { username } = await ctx.params;

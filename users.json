@@ -1,11 +1,18 @@
 {
   "users": [
     {
-      "name": "Chris Kodama",
-      "display_name": "Chris",
-      "jira_search_name": "Chris Kodama",
-      "jira_account_id": "712020:193d6524-3b56-4722-bc00-771dd83928cf",
-      "github_username": null
+      "name": "Alessandro Beltramo",
+      "display_name": "Alessandro",
+      "jira_search_name": "Alessandro Beltramo",
+      "jira_account_id": "712020:a88eb916-cc98-42e8-b7d7-34abd3b8f9f2",
+      "github_username": "ABeltramo"
+    },
+    {
+      "name": "Amber Blue",
+      "display_name": "Amber",
+      "jira_search_name": "Amber Blue",
+      "jira_account_id": "712020:b4fc850c-f3de-403b-b95c-d0e4cac19746",
+      "github_username": "AmberJBlue"
     },
     {
       "name": "Christina Xu",
@@ -19,35 +26,28 @@
       "display_name": "Diego",
       "jira_search_name": "Diego Maniloff",
       "jira_account_id": "712020:3000ee1a-510a-4f3d-bebf-6e58133e841d",
-      "github_username": null
+      "github_username": "dmaniloff"
     },
     {
-      "name": "Emilien Macchi",
-      "display_name": "Emilien",
-      "jira_search_name": "Emilien Macchi",
-      "jira_account_id": "712020:9b576bd5-a4e5-4820-9ab7-330e04045afd",
-      "github_username": null
-    },
-    {
-      "name": "Evgenia Martyniuk",
-      "display_name": "Evgenia",
-      "jira_search_name": "Evgenia Martyniuk",
-      "jira_account_id": "712020:3d2c94e4-351e-406c-bcdb-86f7717a833b",
-      "github_username": null
-    },
-    {
-      "name": "Gin Biak Naulak",
-      "display_name": "Gin",
-      "jira_search_name": "Gin Biak Naulak",
-      "jira_account_id": "712020:8f9466e8-fad6-4aab-82c0-d7841b6529af",
-      "github_username": null
+      "name": "Evaline Ju [C]",
+      "display_name": "Evaline",
+      "jira_search_name": "Evaline Ju",
+      "jira_account_id": "712020:fe9aaf42-1343-47f5-8409-2ad5888f5c69",
+      "github_username": "evaline-ju"
     },
     {
       "name": "Henrique Nunes",
       "display_name": "Henrique",
       "jira_search_name": "Henrique Nunes",
       "jira_account_id": "712020:2edbcb2a-ead3-477e-ae43-851d1923a41e",
-      "github_username": null
+      "github_username": "hjrnunes"
+    },
+    {
+      "name": "Julian Payne",
+      "display_name": "Julian",
+      "jira_search_name": "Julian Payne",
+      "jira_account_id": "712020:e1bbe0c7-3d8c-4289-be71-d6360cdddd5b",
+      "github_username": ""
     },
     {
       "name": "Karishma Punwatkar",
@@ -57,13 +57,6 @@
       "github_username": "kpunwatk"
     },
     {
-      "name": "Luca Burgazzoli",
-      "display_name": "Luca",
-      "jira_search_name": "Luca Burgazzoli",
-      "jira_account_id": "5b335d1d2975df4c55ea6f83",
-      "github_username": "tarilabs"
-    },
-    {
       "name": "Mac Misiura",
       "display_name": "Mac",
       "jira_search_name": "Mac Misiura",
@@ -71,25 +64,18 @@
       "github_username": "m-misiura"
     },
     {
-      "name": "Marian Macik",
-      "display_name": "Marian",
-      "jira_search_name": "Marian Macik",
-      "jira_account_id": "557058:501ca6d5-85be-425d-a151-f0076c0ccd70",
-      "github_username": null
+      "name": "Matteo Mortari",
+      "display_name": "Matteo",
+      "jira_search_name": "Matteo Mortari",
+      "jira_account_id": "5b6859ac36d4343beb82c7a7",
+      "github_username": "tarilabs"
     },
     {
-      "name": "Narayan Sagar B S",
-      "display_name": "Narayan",
-      "jira_search_name": "Narayan Sagar B S",
-      "jira_account_id": "712020:e4eccd48-03ae-40f3-b98d-059e5c49af44",
-      "github_username": null
-    },
-    {
-      "name": "Prabhu Padashetty",
-      "display_name": "Prabhu",
-      "jira_search_name": "Prabhu Padashetty",
-      "jira_account_id": "712020:6558af4f-f52e-4eb8-b552-8e0c5027ba10",
-      "github_username": null
+      "name": "Muneeza Azmat",
+      "display_name": "Muneeza",
+      "jira_search_name": "Muneeza Azmat",
+      "jira_account_id": "712020:bb8a6a79-2d44-4fc2-a843-e695a33df84b",
+      "github_username": "MuneezaAzmat"
     },
     {
       "name": "Rob Geada",
@@ -113,6 +99,13 @@
       "github_username": "saichandrapandraju"
     },
     {
+      "name": "Narayan Sagar B S",
+      "display_name": "Sagar",
+      "jira_search_name": "Narayan Sagar B S",
+      "jira_account_id": "712020:e4eccd48-03ae-40f3-b98d-059e5c49af44",
+      "github_username": ""
+    },
+    {
       "name": "Shehan Saleem",
       "display_name": "Shehan",
       "jira_search_name": "Shehan Saleem",
@@ -127,18 +120,11 @@
       "github_username": "sheltoncyril"
     },
     {
-      "name": "Sobha Cheruku",
-      "display_name": "Sobha",
-      "jira_search_name": "Sobha Cheruku",
-      "jira_account_id": "712020:9c402cdf-b38a-4abd-bf13-b2189dd5dcb1",
-      "github_username": null
-    },
-    {
       "name": "Srikar Tondapu",
       "display_name": "Srikar",
       "jira_search_name": "Srikar Tondapu",
       "jira_account_id": "712020:e40fe191-82a2-4840-86ff-a0a4d3820dad",
-      "github_username": null
+      "github_username": "srikartondapu"
     },
     {
       "name": "Sudip Sinha",
@@ -148,33 +134,12 @@
       "github_username": "SudipSinha"
     },
     {
-      "name": "Sweta Anandpara",
-      "display_name": "Sweta",
-      "jira_search_name": "Sweta Anandpara",
-      "jira_account_id": "70121:20c8bae7-cd2e-44cb-8233-22b0b021fc89",
-      "github_username": null
-    },
-    {
-      "name": "Ugo Giordano",
-      "display_name": "Ugo",
-      "jira_search_name": "Ugo Giordano",
-      "jira_account_id": "618d2948cc2d7c0071887ab5",
-      "github_username": null
-    },
-    {
       "name": "Tareq Alayan",
       "display_name": "Tareq",
       "jira_search_name": "Tareq Alayan",
       "jira_account_id": "5b4df3264649a35be6efab12",
       "github_username": "tareqalayan"
-    },
-    {
-      "name": "Zahra Jalia",
-      "display_name": "Zahra",
-      "jira_search_name": "Zahra Jalia",
-      "jira_account_id": "712020:e133b558-fab0-4d0d-a29d-20cd02e99568",
-      "github_username": null
     }
   ],
-  "jira_projects": ["RHOAIENG"]
+  "jira_projects": ["RHOAIENG","RHOAI"]
 }

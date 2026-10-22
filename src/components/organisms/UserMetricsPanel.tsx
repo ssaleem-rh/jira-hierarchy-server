@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ExternalLink, GitMerge, GitBranch, CheckCircle2, Clock, ListTodo } from "lucide-react";
+import { ExternalLink, GitMerge, GitBranch, CheckCircle2, Clock, ListTodo, AlertTriangle } from "lucide-react";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts";
 import { Avatar } from "@/components/atoms/Avatar";
 import { Badge, statusVariant, prStateVariant } from "@/components/atoms/Badge";
@@ -65,9 +65,18 @@ export function UserMetricsPanel({ username }: UserMetricsPanelProps) {
   if (!data) return null;
 
   const chartData = buildWeeklyData(data.tickets ?? [], data.pull_requests ?? []);
+  const hasJiraError = data.jira_assigned === 0 && data.jira_completed === 0;
 
   return (
     <div className="flex flex-col gap-6">
+      {hasJiraError && (
+        <div className="flex items-center gap-2 rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-400">
+          <AlertTriangle className="h-4 w-4 shrink-0" />
+          <span>
+            {data.jira_error ?? "0 assigned and 0 completed Jira tickets for this period — likely a data/config error (check jira_account_id mapping)."}
+          </span>
+        </div>
+      )}
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div className="flex items-center gap-4">
           <Avatar name={data.display_name} size="lg" />
@@ -92,8 +101,18 @@ export function UserMetricsPanel({ username }: UserMetricsPanelProps) {
       </div>
 
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-        <MetricCard label="Assigned" value={data.jira_assigned} />
-        <MetricCard label="Completed" value={data.jira_completed} accent="text-emerald-400" />
+        <MetricCard
+          label="Assigned"
+          value={data.jira_assigned}
+          accent={hasJiraError ? "text-red-400" : undefined}
+          className={hasJiraError ? "border-red-500/40" : undefined}
+        />
+        <MetricCard
+          label="Completed"
+          value={data.jira_completed}
+          accent={hasJiraError ? "text-red-400" : "text-emerald-400"}
+          className={hasJiraError ? "border-red-500/40" : undefined}
+        />
         <MetricCard label="Active" value={data.jira_active} accent="text-amber-400" />
         <MetricCard label="PRs Opened" value={data.github_opened_prs} />
         <MetricCard label="Merged PRs" value={data.github_merged_prs} accent="text-violet-400" />
@@ -123,8 +142,8 @@ export function UserMetricsPanel({ username }: UserMetricsPanelProps) {
                 labelStyle={{ color: "#a1a1aa" }}
               />
               <Legend wrapperStyle={{ fontSize: 11, paddingTop: 8 }} />
-              <Area type="monotone" dataKey="jira_done" name="Jira Completed" stroke="#10b981" fill="url(#colorJira)" strokeWidth={2} />
-              <Area type="monotone" dataKey="prs_merged" name="PRs Merged" stroke="#8b5cf6" fill="url(#colorPR)" strokeWidth={2} />
+              <Area type="linear" dataKey="jira_done" name="Jira Completed" stroke="#10b981" fill="url(#colorJira)" strokeWidth={2} />
+              <Area type="linear" dataKey="prs_merged" name="PRs Merged" stroke="#8b5cf6" fill="url(#colorPR)" strokeWidth={2} />
             </AreaChart>
           </ResponsiveContainer>
         </div>

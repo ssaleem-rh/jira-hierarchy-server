@@ -15,6 +15,7 @@ export interface LeaderboardEntry {
   github_merged_prs: number;
   github_open_prs: number;
   total: number;
+  jira_error?: string;
 }
 
 export function aggregate(jiraData: UserJiraMetrics[], githubData: UserGitHubMetrics[]): LeaderboardEntry[] {
@@ -38,6 +39,11 @@ export function aggregate(jiraData: UserJiraMetrics[], githubData: UserGitHubMet
       github_merged_prs: githubMerged,
       github_open_prs: gh?.open_prs ?? 0,
       total: jiraCompleted + githubMerged,
+      jira_error:
+        jira.error ??
+        (jira.assigned === 0 && jira.completed === 0
+          ? 'No Jira activity found — check jira_account_id mapping for this user'
+          : undefined),
     };
   });
 

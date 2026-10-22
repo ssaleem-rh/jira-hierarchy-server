@@ -3,6 +3,7 @@ import { JIRA_BASE_URL, JIRA_EMAIL, JIRA_PAT } from './config';
 const FIELDS = 'summary,status,priority,customfield_10028,created,resolutiondate,issuetype';
 
 const PERIOD_JQL: Record<string, string> = {
+  '7d': '-7d',
   '30d': '-30d',
   '3m': '-13w',
   '6m': '-26w',

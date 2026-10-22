@@ -15,6 +15,7 @@ query($query: String!, $cursor: String) {
 `;
 
 const PERIOD_DAYS: Record<string, number> = {
+  '7d': 7,
   '30d': 30,
   '3m': 91,
   '6m': 183,

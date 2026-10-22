@@ -1,4 +1,4 @@
-export type Period = "30d" | "3m" | "6m" | "12m";
+export type Period = "7d" | "30d" | "3m" | "6m" | "12m";
 
 export interface LeaderboardEntry {
   rank: number;
@@ -14,6 +14,7 @@ export interface LeaderboardEntry {
   github_merged_prs: number;
   github_open_prs: number;
   total: number;
+  jira_error?: string;
 }
 
 export interface LeaderboardResponse {

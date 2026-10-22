@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { GitBranch, GitMerge, CheckCircle2, Clock, ListTodo, RefreshCw, Trophy, CircleSlash } from "lucide-react";
+import { GitBranch, GitMerge, CheckCircle2, Clock, ListTodo, RefreshCw, Trophy, CircleSlash, AlertTriangle } from "lucide-react";
 import { Spinner } from "@/components/atoms/Spinner";
 import { SearchBar } from "@/components/molecules/SearchBar";
 import { PeriodSelector } from "@/components/molecules/PeriodSelector";
@@ -27,6 +27,9 @@ function sortEntries(entries: LeaderboardEntry[], key: SortKey, dir: SortDirecti
     return dir === "asc" ? diff : -diff;
   });
 }
+
+const CURRENT_USER_NAME = "Shehan Saleem";
+const TARGET_RANK = 5;
 
 export function LeaderboardTable() {
   const [period, setPeriod] = useState<Period>("30d");
@@ -57,6 +60,18 @@ export function LeaderboardTable() {
     return sortEntries(filtered, sortKey, sortDir);
   }, [data, search, sortKey, sortDir]);
 
+  const { currentUserBehindTarget, pointsToTargetRank } = useMemo(() => {
+    if (!data) return { currentUserBehindTarget: false, pointsToTargetRank: 0 };
+    const me = data.users.find((u) => u.name === CURRENT_USER_NAME);
+    const targetRankEntry = data.users.find((u) => u.rank === TARGET_RANK);
+    if (!me || !targetRankEntry || me.rank <= TARGET_RANK) {
+      return { currentUserBehindTarget: false, pointsToTargetRank: 0 };
+    }
+    // +1 ensures strictly overtaking the rank-6 total, even on a tie-break.
+    const needed = Math.max(0, targetRankEntry.total - me.total) + 1;
+    return { currentUserBehindTarget: true, pointsToTargetRank: needed };
+  }, [data]);
+
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
@@ -78,6 +93,17 @@ export function LeaderboardTable() {
         <p className="text-xs text-muted-foreground">
           Last updated: {new Date(data.generated_at).toLocaleString()}
         </p>
+      )}
+
+      {currentUserBehindTarget && (
+        <div className="flex items-center gap-2 rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-400">
+          <AlertTriangle className="h-4 w-4 shrink-0" />
+          <span>
+            You&apos;re below rank #{TARGET_RANK} for this period — you need{" "}
+            <span className="font-semibold">{pointsToTargetRank}</span> more point
+            {pointsToTargetRank === 1 ? "" : "s"} to reach rank #{TARGET_RANK}.
+          </span>
+        </div>
       )}
 
       <div className="rounded-lg border border-border bg-card overflow-hidden">
@@ -124,9 +150,22 @@ export function LeaderboardTable() {
                   <td colSpan={8} className="py-12 text-center text-muted-foreground">No results found</td>
                 </tr>
               )}
-              {rows.map((u) => (
-                <tr key={u.display_name} className="hover:bg-muted/20 transition-colors">
-                  <td className="px-4 py-3 tabular-nums text-muted-foreground text-sm">
+              {rows.map((u) => {
+                const hasJiraError = u.jira_assigned === 0 && u.jira_completed === 0;
+                const isMe = u.name === CURRENT_USER_NAME;
+                const isMeBehindTarget = isMe && currentUserBehindTarget;
+                return (
+                <tr
+                  key={u.display_name}
+                  className={`hover:bg-muted/50 transition-colors ${
+                    isMeBehindTarget ? "bg-red-500/10" : isMe ? "bg-muted/40" : ""
+                  } ${hasJiraError && !isMeBehindTarget ? "bg-red-500/5" : ""}`}
+                >
+                  <td
+                    className={`px-4 py-3 tabular-nums text-sm ${
+                      isMeBehindTarget ? "text-red-400 font-semibold" : "text-muted-foreground"
+                    }`}
+                  >
                     {u.rank}
                   </td>
                   <td className="px-4 py-3">
@@ -134,22 +173,48 @@ export function LeaderboardTable() {
                       href={`/users/${encodeURIComponent(u.display_name)}`}
                       className="flex items-center gap-2 hover:underline"
                     >
-                      <span className="font-medium">{u.name}</span>
-                      {!u.github_username && (
-                        <span title="GitHub username not configured" className="shrink-0">
-                          <CircleSlash className="h-3 w-3 text-muted-foreground/40" />
-                        </span>
-                      )}
+                      <span
+                        className={`font-medium flex-1 min-w-0 ${isMeBehindTarget ? "text-red-400" : ""}`}
+                      >
+                        {u.name}
+                      </span>
+                      <span className="flex items-center gap-1 shrink-0">
+                        {isMeBehindTarget && (
+                          <span title={`Below rank #${TARGET_RANK} — need ${pointsToTargetRank} more point${pointsToTargetRank === 1 ? "" : "s"}`}>
+                            <AlertTriangle className="h-3.5 w-3.5 text-red-400" />
+                          </span>
+                        )}
+                        {hasJiraError && (
+                          <span title={u.jira_error ?? "0 assigned and 0 completed — likely a data/config error"}>
+                            <AlertTriangle className="h-3.5 w-3.5 text-red-400" />
+                          </span>
+                        )}
+                        {!u.github_username && (
+                          <span title="GitHub username not configured">
+                            <CircleSlash className="h-3 w-3 text-red-400" />
+                          </span>
+                        )}
+                      </span>
                     </Link>
                   </td>
                   <td className="px-4 py-3 text-right">
-                    <span className="flex items-center justify-end gap-1 tabular-nums text-muted-foreground">
+                    <span
+                      className={`flex items-center justify-end gap-1 tabular-nums ${
+                        hasJiraError ? "text-red-400 font-semibold" : "text-muted-foreground"
+                      }`}
+                      title={hasJiraError ? u.jira_error : undefined}
+                    >
                       <ListTodo className="h-3.5 w-3.5" />
                       {u.jira_assigned}
                     </span>
                   </td>
                   <td className="px-4 py-3 text-right">
-                    <span className="flex items-center justify-end gap-1 tabular-nums text-emerald-400 font-semibold">
+                    <span
+                      className={`flex items-center justify-end gap-1 tabular-nums font-semibold ${
+                        hasJiraError ? "text-red-400" : "text-emerald-400"
+                      }`}
+                      title={hasJiraError ? u.jira_error : undefined}
+                    >
                       <CheckCircle2 className="h-3.5 w-3.5" />
                       {u.jira_completed}
                     </span>
@@ -179,7 +244,8 @@ export function LeaderboardTable() {
                     </span>
                   </td>
                 </tr>
-              ))}
+                );
+              })}
             </tbody>
           </table>
         )}
